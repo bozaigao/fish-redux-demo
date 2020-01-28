@@ -1,16 +1,11 @@
-# flutter_app
+# fish-redux-demo
 
-A new Flutter application.
+一个基于fish-redux的Flutter脚手架，包含基本的屏幕适配、全局toast提示、网络请求封装、路由框架集成、网络图片缓存，
+实现了在fish-redux框架下fluro路由框架的集成、演示了Flutter和WebView的双向通信，实现了在fish-redux模式下的页面跳转
+传参以及实现AutomaticKeepAliveClientMixin，是一个开箱即用不可多得的Flutter项目脚手架。
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 效果图如下
+![](./flutter_1.png)
+![](./flutter_2.png)
+![](./flutter_3.png)
+![](./flutter_4.png)
