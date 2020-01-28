@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ydg-fD-yQy"/>
+                        <viewControllerLayoutGuide type="bottom" id="xbc-2k-c8Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
+                                <rect key="frame" x="97" y="0.0" width="181" height="366.5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="TSL-GN-RvZ">
+                                <rect key="frame" x="125" y="596.5" width="125" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="4fV-r9-mOG"/>
+                                    <constraint firstAttribute="width" constant="125" id="eXr-sE-nMs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©2019 医点数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tny-pf-fAY">
+                                <rect key="frame" x="142" y="632.5" width="91" height="14.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="xwU-Z6-0es"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
+                            <constraint firstItem="tny-pf-fAY" firstAttribute="centerX" secondItem="YRO-k0-Ey4" secondAttribute="centerX" id="56H-i5-eoY"/>
+                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="top" secondItem="Ydg-fD-yQy" secondAttribute="bottom" id="GRu-UT-Qww"/>
+                            <constraint firstItem="tny-pf-fAY" firstAttribute="top" secondItem="TSL-GN-RvZ" secondAttribute="bottom" constant="10" id="Ipm-sw-H8h"/>
+                            <constraint firstItem="TSL-GN-RvZ" firstAttribute="top" secondItem="YRO-k0-Ey4" secondAttribute="bottom" constant="230" id="Sse-xe-hfB"/>
+                            <constraint firstItem="xbc-2k-c8Z" firstAttribute="top" secondItem="tny-pf-fAY" secondAttribute="bottom" constant="20" id="gJk-mB-ATZ"/>
+                            <constraint firstItem="TSL-GN-RvZ" firstAttribute="centerX" secondItem="YRO-k0-Ey4" secondAttribute="centerX" id="pDB-rE-GJQ"/>
+                            <constraint firstItem="tny-pf-fAY" firstAttribute="top" secondItem="TSL-GN-RvZ" secondAttribute="bottom" constant="10" id="sqt-OQ-JiP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="250.52473763118442"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchImage" width="181" height="66"/>
+        <image name="splash_logo" width="125" height="26"/>
+    </resources>
+</document>
