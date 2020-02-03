@@ -64,8 +64,7 @@ void showExitDialog(BuildContext context) async {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(scaleSize(10)),
-                                bottomRight: Radius.circular(scaleSize(10))),
+                                bottomLeft: Radius.circular(scaleSize(10))),
                             color: Color(0xffecf0f9),
                           ),
                           child: Center(
