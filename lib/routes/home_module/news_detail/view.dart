@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
@@ -73,81 +74,37 @@ Widget buildView(
         SafeArea(
           child: Container(
             margin: EdgeInsets.only(top: scaleSize(44)),
-            child: SingleChildScrollView(
-              child: Container(
-                color: Colors.white,
-                child: Column(
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(left: scaleSize(20)),
-                          width: ScreenUtil.screenWidthDp,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                state.materialEntity != null
-                                    ? state.materialEntity.title
-                                    : '',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.none,
-                                    color: Color(0xff575757),
-                                    fontSize: setSp(scaleSize(22))),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: scaleSize(5)),
-                                child: Text(
-                                    state.materialEntity != null
-                                        ? state.materialEntity.origin
-                                        : '',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        decoration: TextDecoration.none,
-                                        color: MyColors.themeColor,
-                                        fontSize: setSp(scaleSize(14)))),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          width: ScreenUtil.screenWidthDp,
-                          height: state.webViewHeight,
-                          child: state.materialEntity != null
-                              ? WebView(
-                                  initialUrl: new Uri.dataFromString(webHtml,
-                                          mimeType: 'text/html',
-                                          encoding: Encoding.getByName("utf-8"))
-                                      .toString(),
-                                  debuggingEnabled: true,
-                                  javascriptMode: JavascriptMode.unrestricted,
-                                  onPageStarted: (url) {
-                                    showProgress(viewService.context);
-                                  },
-                                  onPageFinished: (url) {
-                                    hideProgress(viewService.context);
-                                  },
-                                  javascriptChannels: <JavascriptChannel>[
-                                    JavascriptChannel(
-                                        name: "sendHeight",
-                                        onMessageReceived:
-                                            (JavascriptMessage message) {
-                                          println('高度' + message.message);
-                                          dispatch(NewsDetailActionCreator
-                                              .updateWebViewHeight(double.parse(
-                                                      message.message) +
-                                                  scaleSize(50)));
-                                        }),
-                                  ].toSet(),
-                                )
-                              : SizedBox(),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
+            child: Container(
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                Expanded(child: state.materialEntity != null
+                    ? WebView(
+                  initialUrl: new Uri.dataFromString(webHtml,
+                      mimeType: 'text/html',
+                      encoding: Encoding.getByName("utf-8"))
+                      .toString(),
+                  debuggingEnabled: false,
+                  javascriptMode: JavascriptMode.unrestricted,
+                  onPageStarted: (url) {
+                    showProgress(viewService.context);
+                  },
+                  onPageFinished: (url) {
+                    hideProgress(viewService.context);
+                  },
+                  javascriptChannels: <JavascriptChannel>[
+                    JavascriptChannel(
+                        name: "sendHeight",
+                        onMessageReceived:
+                            (JavascriptMessage message) {
+                          println('高度' + message.message);
+                          dispatch(NewsDetailActionCreator
+                              .updateWebViewHeight(double.parse(
+                              message.message) +
+                              scaleSize(50)));
+                        }),
+                  ].toSet(),
+                ):SizedBox(),)
+              ],),
             ),
           ),
         )
