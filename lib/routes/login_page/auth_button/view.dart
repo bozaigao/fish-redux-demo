@@ -27,7 +27,7 @@ Widget buildView(
           width: scaleSize(315),
           height: scaleSize(50),
           child: WebView(
-            initialUrl: 'http://codepush.guigug.com/auth1.html',
+            initialUrl: 'http://codepush.guigug.com/flutter.html',
             debuggingEnabled: true,
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController controller) {
